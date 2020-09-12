@@ -46,8 +46,11 @@ changelog:
       - '^test:'
 
 brews:
-  - github:
+  - 
+    tap:
       owner: nityanandagohain
       name: homebrew-gorelease_poc
     url_template: "https://github.com/nityanandagohain/gorelease_poc/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     homepage: https://github.com/nityanandagohain/gorelease_poc
+    test: |
+      system "#{bin}/gorelease_poc --version"
