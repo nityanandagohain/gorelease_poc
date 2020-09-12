@@ -49,7 +49,7 @@ brews:
   - 
     tap:
       owner: nityanandagohain
-      name: homebrew-gorelease_poc
+      name: gorelease_poc
     url_template: "https://github.com/nityanandagohain/gorelease_poc/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     homepage: https://github.com/nityanandagohain/gorelease_poc
     test: |
