@@ -15,12 +15,25 @@ builds:
       - windows
       - darwin
 archives:
-  - replacements:
+  -
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
       386: i386
       amd64: x86_64
+    format: binary
+  -
+    id: homebrew
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    format: zip
 checksum:
   name_template: 'checksums.txt'
 snapshot:
@@ -36,5 +49,5 @@ brews:
   - github:
       owner: nityanandagohain
       name: homebrew-gorelease_poc
-    folder: Formula
+    url_template: "https://github.com/nityanandagohain/gorelease_poc/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     homepage: https://github.com/nityanandagohain/gorelease_poc
