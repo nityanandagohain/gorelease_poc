@@ -31,3 +31,11 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+brews:
+- tap:
+    owner: nityanandagohain
+    name: homebrew-nitya
+  description: Testing
+  homepage: https://github.com/nityanandagohain/gorelease_poc
+  test: |
+    system "#{bin}/gorelease_poc -v"
